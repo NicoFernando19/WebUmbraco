@@ -1,0 +1,11 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<ContentModels.Department>
+@using ContentModels = Umbraco.Web.PublishedModels;
+@{
+    ViewData["Title"] = "Deprtment - " + @Model.DepartmentName;
+    Layout = "~/Views/Master.cshtml";
+}
+
+<h1>@Model.DepartmentName</h1>
+
+
+<p>@Model.Description</p>

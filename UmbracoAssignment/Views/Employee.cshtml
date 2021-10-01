@@ -1,0 +1,52 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<ContentModels.Employee>
+@using ContentModels = Umbraco.Web.PublishedModels;
+@{
+    var image = Model.Value<IPublishedContent>("profileImage")?.Url ?? "";
+    ViewData["Title"] = "Profile - " + @Model.EmployeeName;
+    Layout = "~/Views/Master.cshtml";
+}
+
+<h1>Details</h1>
+
+<div class="row">
+    <div class="col-md-6">
+        <div class="col d-flex justify-content-center">
+            <div class="w-50 d-flex justify-content-center">
+                @if(image != null)
+                {
+                    <img src="@image" class="w-25 elevation-3 img-responsive" id="image" alt="">
+                }
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label class="control-label font-weight-bold">Name</label>
+                </div>
+                <div class="form-group">
+                    <label class="control-label">@Model.EmployeeName</label>
+                </div>
+                <div class="form-group">
+                    <label class="control-label font-weight-bold">Email</label>
+                </div>
+                <div class="form-group">
+                    <label class="control-label">@Model.Email</label>
+                </div>
+                <div class="form-group">
+                    <label class="control-label font-weight-bold">Date of Birth</label>
+                </div>
+                <div class="form-group">
+                    <label class="control-label">@Model.DoB</label>
+                </div>
+                <div class="form-group">
+                    <label class="control-label font-weight-bold">Department</label>
+                </div>
+                <div class="form-group">
+                    <label class="control-label">@Model.Department</label>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

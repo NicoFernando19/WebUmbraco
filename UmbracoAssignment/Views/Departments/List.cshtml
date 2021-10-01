@@ -1,0 +1,27 @@
+﻿@model IEnumerable<UmbracoAssignment.CustomDatabase.Entities.Department>
+@{
+    ViewBag.Title = "List";
+    Layout = "~/Views/Master.cshtml";
+}
+
+<h2>List of Departments</h2>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">No.</th>
+            <th scope="col">Department Name</th>
+            <th scope="col">Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <th scope="row">@item.Id</th>
+                <td>@item.Name</td>
+                <td>@item.Description</td>
+            </tr>
+        }
+    </tbody>
+</table>
